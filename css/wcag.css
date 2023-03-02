@@ -1,0 +1,184 @@
+/*
+Colours
+=======
+*/
+
+/* Colour variables */
+:root {
+  --main-bg-color: #333;
+  --main-text-color: #ccc;
+  --main-link-color: #FDB315;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+}
+
+/* Link colours */
+a:link,
+a:visited {
+  background-color: var(--main-bg-color);
+  color: var(--main-link-color);
+}
+
+/* Add hover styles to links */
+section.principle a:hover,
+section.principle a:focus {
+  background-color: var(--main-link-color);
+  color: var(--main-bg-color);
+}
+
+/* Highlighted 2.2 link hover styles */
+li.highlight a:link,
+li.highlight a:visited {
+  color: white;
+  background-color: black;
+  font-weight: bold;
+}
+
+li.highlight a:hover,
+li.highlight a:focus {
+  background-color: white;
+  color: black;
+}
+
+/* Formatting */
+
+/* Fonts */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.6rem;
+}
+
+
+/* Remove underline from links in the main SC page. Also style as blocks for consistent hover/focus behaviour and increased target size */
+section.principle a:link,
+section.principle a:visited {
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+/* Remove bullets and padding from list of SCs */
+section.principle ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style empty list messages */
+p.emptyListPara {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+/* Display doclinks as INLINE */
+span.doclinks a:link,
+span.doclinks a:visited {
+  display: inline !important;
+}
+
+
+/* 
+Layout 
+======
+*/
+
+
+/* Preferences section */
+#preferences fieldset {
+  display: inline;
+}
+
+#preferences input[type=text] {
+  border: 0;
+}
+
+/* Homepage: display as 4 columns */
+@media (min-width: 768px) {
+  #sc-container {
+    display: flex;
+  }
+
+  section.principle {
+    width: 25%;
+    margin: 0.5em;
+  }
+}
+
+/* Remove top margin on principle headings for neatness */
+section.principle h2 {
+  margin-top: 0;
+}
+
+/* Tabs on SC page */
+/* At smaller screen sizes, display as a vertical list */
+/* Tab container */
+
+/* Tab container */
+.tabs {
+  padding: 1em;
+  max-width: 70em;
+  margin: 0 auto;
+}
+
+/* tablist container */
+div[role=tablist] {
+  border: solid 0px blue;
+  border-top: solid 2px #333;
+  border-left: solid 2px #333;
+  border-right: solid 2px #333;
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* Default tab styling */
+div[role=tablist] button {
+  background-color: var(--main-bg-color);
+  color: var(--main-link-color);
+  border: none;
+  padding: 1em;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Selected tab styling */
+div[role=tablist] button[aria-selected=true] {
+  color: var(--main-bg-color);
+  background-color: var(--main-link-color);
+}
+
+/* Tab panels */
+div[role=tabpanel] {
+  border-bottom: solid 2px #333;
+  border-left: solid 2px #333;
+  border-right: solid 2px #333;
+  margin: 0;
+}
+
+/* Desktop tabs */
+@media (min-width: 768px) {
+  div[role=tablist] {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  div[role=tablist] button {
+    flex: 1 1 10%;
+  }
+
+}
+
+div[role=tabpanel]>h2 {
+  margin-top: 0;
+  padding-top: 1em;
+}
+
+/* mobile tabs */
